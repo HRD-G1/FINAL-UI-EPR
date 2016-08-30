@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="expertApplication" ng-controller="expertController">
+<html ng-app="expertApplication" ng-controller="expertController" ng-init="getDataOUpdate(<%=request.getParameter("id")%>)">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -638,7 +638,7 @@
 									<div class="col-md-6 col-sm-6">
 										<div class="form-group">
 											<label for="address">Location</label> <input type="text"
-												ng-model="jobExpectationOfExpert[$index].LOCATION"
+											ng-model="jobExpectationOfExpert[$index].LOCATION"
 												class="form-control" id="Location"
 												placeholder="A Place You Wish to Work...">
 										</div>
@@ -667,422 +667,65 @@
 							</div>
 						</div>
 						<!-- Job Expectation -->
+
 						<hr>
 
 						<!-- Skill -->
 						<div class="row"
 							style="background-color: #FFF; padding: 10px; margin: 10px">
+							<div ng-repeat="se in subjectOfExpert">
 								<div class="Skill">
 									<div class="col-md-12 col-sm-6">
-										<h3>Skill</h3>
+										<h3>
+											<span style="color: #e74c3c; cursor: pointer;"
+												id="removeLanguage" class="fa fa-trash-o"></span> Skill
+										</h3>
 									</div>
-									<div id="framework">
-										<div ng-repeat="frm in framework">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Framework
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Framework Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="framework[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in frameworks">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="framework[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempframeworkOfExpert()">More</button>
-											</div>
+									<div class="col-md-4 com-sm-6">
+										<label for="gender">Main Skill</label>
+										<div class="form-group input-group">
+											<select name="Institution" class="form-control"
+												ng-change="whenMainSkillchange(mainSkillID)"
+												ng-model="mainSkillID"
+												ng-options="ms.SUBJECT_CATEOGRY_ID as ms.SUBJECT_CATEGORY_NAME for ms in mainSkillSet">
+											</select> <span class="input-group-btn"><button type="button"
+													class="btn btn-default btn-add" data-toggle="modal"
+													data-target="#addMainSkill" ng-click="whenInsert()">+</button></span>
 										</div>
 									</div>
-									<div id="frontEnds">
-										<div ng-repeat="frn in frontEnd">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Front End
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Front End Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="frontEnd[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in frontEnds">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="frontEnd[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempfontEndOfExpert()">More</button>
-											</div>
+									<div class="col-md-4 col-sm-6">
+										<label for="gender">Skill</label>
+										<div class="form-group input-group">
+											<select name="level" class="form-control"
+												ng-model="subjectOfExpert[$index].SUBJECT_ID"
+												ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in subSkillObject">
+											</select> <span class="input-group-btn"><button type="button"
+													class="btn btn-default btn-add" data-toggle="modal"
+													data-target="#addSkill" ng-click="whenInsert()">+</button></span>
 										</div>
 									</div>
-									
-									
-									
-									<div id="backEnds">
-										<div ng-repeat="bnd in backEnd">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Back End
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Back End Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="backEnd[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in backEnds">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="backEnd[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempbackEndOfExpert()">More</button>
-											</div>
+									<div class="col-md-4 col-sm-6">
+										<div class="form-group">
+											<label for="level">Level</label> <select class="form-control"
+												ng-model="subjectOfExpert[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
+												id="level">
+												<option value="Low">Low</option>
+												<option value="Medium">Medium</option>
+												<option value="High">High</option>
+											</select>
 										</div>
 									</div>
-									
-									<div id="mobile-dev">
-										<div ng-repeat="mbd in mobileDev">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Mobile Development
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Mobile Development Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="mobileDev[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in mobileDevs">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="mobileDev[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempmobileDevOfExpert()">More</button>
-											</div>
-										</div>
-									</div>
-									
-									<div id="database">
-										<div ng-repeat="mbd in database">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Database
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Database Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="database[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in databases">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="database[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempdatabaseOfExpert()">More</button>
-											</div>
-										</div>
-									</div>
-									
-									<div id="network">
-										<div ng-repeat="mbd in network">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Database
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Database Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="network[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in networks">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="network[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempnetworkOfExpert()">More</button>
-											</div>
-										</div>
-									</div>
-									
-									<div id="sos">
-										<div ng-repeat="sos in sos">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													System Operating System
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">System Operating System Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="sos[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in soss">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="sos[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempsosOfExpert()">More</button>
-											</div>
-										</div>
-									</div>
-									
-									<div id="graphicDesign">
-										<div ng-repeat="sos in sos">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Graphic Design
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Graphic Design Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="graphicDesign[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in graphicDesigns">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div cla	ss="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="graphicDesign[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempgraphicDesignOfExpert()">More</button>
-											</div>
-										</div>
-									</div>
-									
-									<div id="ms">
-										<div ng-repeat="ms in ms">
-											<div class="col-md-12 col-sm-6">
-												<h4>
-													<span style="color: #e74c3c; cursor: pointer;"
-														id="removeLanguage" class="fa fa-trash-o"></span>
-													Microsoft Office
-												</h4>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<label for="gender">Microsoft Office Skill</label>
-												<div class="form-group input-group">
-													<select name="level" class="form-control"
-														ng-model="ms[$index].SUBJECT_ID"
-														ng-options="ss.SUBJECT_ID as ss.SUBJECT_NAME for ss in mss">
-													</select> <span class="input-group-btn"><button type="button"
-															class="btn btn-default btn-add" data-toggle="modal"
-															data-target="#addSkill" ng-click="whenInsert()">+</button></span>
-												</div>
-											</div>
-											
-											<div class="col-md-6 col-sm-6">
-												<div class="form-group">
-													<label for="level">Level</label> <select
-														class="form-control"
-														ng-model="ms[$index].EXPERT_SUBJECT_DETAIL_LEVEL"
-														id="level">
-														<option value="Low">Low</option>
-														<option value="Medium">Medium</option>
-														<option value="High">High</option>
-													</select>
-												</div>
-											</div>
-											
-											<span style="display: none;">{{$index+1}}</span>
-										</div>
-										<div class="col-md-12 text-right">
-											<div class="btn-group">
-												<button type="button" id="moreSkill"
-													class="btn btn-primary fa fa-plus-circle"
-													ng-click="addTempmsmsOfExpert()">More</button>
-											</div>
-										</div>
-									</div>
-									
+									<div class="col-md-12">Subject Of Expert {{$index+1}}</div>
 								</div>
+							</div>
+							<div class="col-md-12 text-right">
+								<div class="btn-group">
+									<button type="button" id="moreSkill"
+										class="btn btn-primary fa fa-plus-circle"
+										ng-click="addTempsubjectOfExpertOfExpert()">More
+										Skill</button>
+								</div>
+							</div>
 						</div>
 						<!-- Skill -->
 
@@ -1113,7 +756,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="address">Document Name</label> <input type="text"
-												ng-model="fileDocOfExpert[$index].FILE_NAME"
+											ng-model="fileDocOfExpert[$index].FILE_NAME"
 												class="form-control" id="Location"
 												placeholder="A Place You Wish to Work...">
 										</div>

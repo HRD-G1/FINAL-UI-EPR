@@ -60,6 +60,11 @@ public class MainController {
 		return "admin/expert/add/add-expert";
 	}
 
+	@RequestMapping(value = "/rest/admin/expert/update")
+	public String updateExpert() {
+		return "admin/expert/update/update-expert";
+	}
+	
 	@RequestMapping(value = "/rest/admin/expert/view")
 	public String viewExpert() {
 		return "admin/expert/view/view-expert";

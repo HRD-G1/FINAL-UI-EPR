@@ -116,9 +116,7 @@
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
-				<h1>
-					View Expert
-				</h1>
+				<h1>View Expert</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 					<li><a href="#">Tables</a></li>
@@ -133,8 +131,7 @@
 						<div class="box">
 							<div class="box-header">
 								<div class="box">
-									<div class="box-header">
-									</div>
+									<div class="box-header"></div>
 									<!-- /.box-header -->
 									<div class="box-body">
 										<table class="table table-striped table-bordered table-list">
@@ -161,9 +158,9 @@
 													<td>{{expt.EXPERT_GENDERATION}}</td>
 													<td>{{expt.EXPERT_STATUS}}</td>
 													<td align="center"><a class="btn btn-default"
-														ng-click="getUpdateSkill(this)" data-toggle="modal"
-														data-target="#addSkill"><em class="fa fa-pencil"></em></a>
-														<a class="btn btn-danger"
+														ng-click="getUpdateSkill(expt.EXPERT_ID)"
+														data-toggle="modal" data-target="#addSkill"><em
+															class="fa fa-pencil"></em></a> <a class="btn btn-danger"
 														ng-click="getDataDetail(expt.EXPERT_ID)"
 														data-toggle="modal" data-target="#viewExpert"><em
 															class="fa fa-eye"></em></a></td>
@@ -310,6 +307,8 @@
 									data-toggle="tab">Job Expectation</a></li>
 								<li style="font-family: 'Arial'"><a href="#projectDemo"
 									data-toggle="tab">Project Demo</a></li>
+								<li style="font-family: 'Arial'"><a href="#document"
+									data-toggle="tab">Document</a></li>
 							</ul>
 						</div>
 						<div class="panel-body">
@@ -443,6 +442,9 @@
 								<div class="tab-pane fade" id="projectDemo">
 									<object data="{{expertDetail.PROJECT_LINK_DEMO}}" width="1024"
 										height="600"></object>
+								</div>
+								<div class="tab-pane fade" id="document">
+									<a href="http://localhost:3333/{{}}"></a>
 								</div>
 							</div>
 						</div>

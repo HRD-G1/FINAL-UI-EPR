@@ -247,7 +247,7 @@ app
 							url : 'http://localhost:3333/rest/subjectcategory',
 							method : 'GET'
 						}).then(function(response) {
-							console.log(response)
+							console.log("Main Skill: ",response)
 							$scope.mainSkillSet = response.data.DATA; // array
 						}, function(response) {
 
@@ -2281,27 +2281,450 @@ app
 						});
 					};
 
-					$scope.subjectOfExpert = [ {
+					//subject
+					
+					$scope.getDataOfFramework = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/1',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("framework DATA",response)
+							$scope.frameworks = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfFramework();
+					
+					$scope.framework = [ {
 						EXPERT_ID : 0,
 						EXPERT_SUBJECT_DETAIL_LEVEL : "",
-						SUBJECT_CATEGORY_ID : "",
+						SUBJECT_CATEGORY_ID : "1",
 						SUBJECT_CATEGORY_NAME : "",
 						SUBJECT_ID : 0,
 						SUBJECT_NAME : ""
 					} ]
-
-					$scope.addTempsubjectOfExpertOfExpert = function() {
-						$scope.subjectOfExpert.push({
+					
+					$scope.addTempframeworkOfExpert = function() {
+						$scope.framework.push({
 							EXPERT_ID : 0,
 							EXPERT_SUBJECT_DETAIL_LEVEL : "",
-							SUBJECT_CATEGORY_ID : "",
+							SUBJECT_CATEGORY_ID : "1",
 							SUBJECT_CATEGORY_NAME : "",
 							SUBJECT_ID : 0,
 							SUBJECT_NAME : ""
 						})
 					}
+					
+					$scope.getDataOfBackEnd = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/3',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("Font End DATA",response)
+							$scope.frontEnds = response.data.DATA; // array
+						}, function(response) {
 
-					// skill
+						});
+					};
+					
+					$scope.getDataOfBackEnd();
+					
+					$scope.frontEnd = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "2",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempfrontEndOfExpert = function() {
+						$scope.frontEnd.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "2",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					$scope.getDataOfbackEnd = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/2',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("Font End DATA",response)
+							$scope.backEnds = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfbackEnd();
+					
+					$scope.backEnd = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "3",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempbackEndOfExpert = function() {
+						$scope.backEnd.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "3",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					$scope.getDataOfmobileDev = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/4',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("Font End DATA",response)
+							$scope.mobileDevs = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfmobileDev();
+					
+					$scope.mobileDev = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "4",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempmobileDevOfExpert = function() {
+						$scope.mobileDev.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "4",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					$scope.getDataOfdatabase = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/5',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("Font End DATA",response)
+							$scope.databases = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfdatabase();
+					
+					$scope.database = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "5",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempdatabaseOfExpert = function() {
+						$scope.database.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "5",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					$scope.getDataOfnetwork = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/6',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("Font End DATA",response)
+							$scope.networks = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfnetwork();
+					
+					$scope.network = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "6",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempnetworkOfExpert = function() {
+						$scope.network.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "6",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					
+					$scope.getDataOfsos = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/7',
+							method : 'GET'
+						}).then(function(response) {
+							console.log("Font End DATA",response)
+							$scope.soss = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfsos();
+					
+					$scope.sos = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "7",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempsosOfExpert = function() {
+						$scope.sos.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "7",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+
+					$scope.getDataOfGraphicDesign = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/8',
+							method : 'GET'
+						}).then(function(response) {
+							$scope.graphicDesigns = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfGraphicDesign();
+					
+					$scope.graphicDesign = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "8",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempgraphicDesignOfExpert = function() {
+						$scope.graphicDesign.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "8",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					$scope.getDataOfms = function() {
+						$http({
+							url : 'http://localhost:3333/rest/subject/bysubjectcategory/9',
+							method : 'GET'
+						}).then(function(response) {
+							$scope.mss = response.data.DATA; // array
+						}, function(response) {
+
+						});
+					};
+					
+					$scope.getDataOfms();
+					
+					$scope.ms = [ {
+						EXPERT_ID : 0,
+						EXPERT_SUBJECT_DETAIL_LEVEL : "",
+						SUBJECT_CATEGORY_ID : "9",
+						SUBJECT_CATEGORY_NAME : "",
+						SUBJECT_ID : 0,
+						SUBJECT_NAME : ""
+					} ]
+					
+					$scope.addTempmsmsOfExpert = function() {
+						$scope.ms.push({
+							EXPERT_ID : 0,
+							EXPERT_SUBJECT_DETAIL_LEVEL : "",
+							SUBJECT_CATEGORY_ID : "9",
+							SUBJECT_CATEGORY_NAME : "",
+							SUBJECT_ID : 0,
+							SUBJECT_NAME : ""
+						})
+					}
+					
+					
+					$scope.subjectOfExpert = [];
+
+					$scope.addAllSubjects = function() {
+						
+						//framework
+						for(var i = 0; i < $scope.framework.length; i++){
+							if($scope.framework[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.framework[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.framework[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//front end
+						for(var i = 0; i < $scope.frontEnd.length; i++){
+							if($scope.frontEnd[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.frontEnd[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.frontEnd[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//back end
+						for(var i = 0; i < $scope.backEnd.length; i++){
+							if($scope.backEnd[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.backEnd[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.backEnd[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//mobileDev
+						for(var i = 0; i < $scope.mobileDev.length; i++){
+							if($scope.mobileDev[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.mobileDev[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.mobileDev[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//database
+						for(var i = 0; i < $scope.database.length; i++){
+							if($scope.database[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.database[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.database[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//network
+						for(var i = 0; i < $scope.network.length; i++){
+							if($scope.network[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.network[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.network[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//sos
+						for(var i = 0; i < $scope.sos.length; i++){
+							if($scope.sos[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.sos[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.sos[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//graphicDesign
+						for(var i = 0; i < $scope.graphicDesign.length; i++){
+							if($scope.graphicDesign[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.graphicDesign[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.graphicDesign[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						//ms
+						for(var i = 0; i < $scope.ms.length; i++){
+							if($scope.ms[i].SUBJECT_ID != 0){
+								$scope.subjectOfExpert.push({
+									EXPERT_ID : 0,
+									EXPERT_SUBJECT_DETAIL_LEVEL : $scope.ms[i].EXPERT_SUBJECT_DETAIL_LEVEL,
+									SUBJECT_CATEGORY_ID : "",
+									SUBJECT_CATEGORY_NAME : "",
+									SUBJECT_ID : $scope.ms[i].SUBJECT_ID,
+									SUBJECT_NAME : ""
+								})
+							}
+						}
+						
+						console.log($scope.subjectOfExpert);
+						
+					}
+
+					// subject
 
 					// file doc
 					$scope.fileDocOfExpert = [ {
@@ -2348,6 +2771,14 @@ app
 					}
 
 					clear = function() {
+						
+						$scope.fileDocOfExpert = [ {
+							DESCRIPTION : "",
+							EXPERT_ID : 0,
+							FILE_DOCUMENT_ID : 0,
+							FILE_NAME : "",
+							FILE_PATH : 0
+						} ];
 
 						var storePath = [];
 					}
@@ -2368,7 +2799,7 @@ app
 												console
 														.log(
 																"File Doc of Expert",
-																$scope.fileDocOfExpert[i]);
+																$scope.fileDocOfExpert[i].FILE_PATH);
 												$scope.fileDocOfExpert[i].FILE_PATH = storePath[i].PATH;
 											}
 
@@ -2378,6 +2809,7 @@ app
 											// if insert photo success
 
 											alert("called add Expert")
+											$scope.addAllSubjects();
 
 											$scope.expertAllTheTimes = {
 												DOB : $scope.dateOfBirth,
