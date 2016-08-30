@@ -49,10 +49,6 @@ app
 				'expertController',
 				function($scope, $http, uploadFile) {
 
-					$scope.test = function() {
-						console.log($scope.fileDocOfExpert);
-					}
-
 					$('#EXPERT_PAGIN').on("page", function(event, currentPage) {
 						$scope.filter.page = currentPage;
 						$scope.getDataOfExperts();
@@ -63,10 +59,6 @@ app
 					$scope.getDataDetail = function(ID) {
 						$http({
 							url : 'http://localhost:3333/rest/expert/' + ID,
-							/*
-							 * url:
-							 * 'http://localhost:7777/rest/subject/bysubjectcategory/'+catID,
-							 */
 							method : 'GET'
 						}).then(function(response) {
 
@@ -2780,7 +2772,7 @@ app
 							FILE_PATH : 0
 						} ];
 
-						var storePath = [];
+						storePath = [];
 					}
 
 					$scope.addImage = function() {

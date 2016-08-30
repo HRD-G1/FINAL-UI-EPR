@@ -157,9 +157,7 @@
 													<td>{{expt.EXPERT_PHONE1}}</td>
 													<td>{{expt.EXPERT_GENDERATION}}</td>
 													<td>{{expt.EXPERT_STATUS}}</td>
-													<td align="center"><a class="btn btn-default"
-														ng-click="getUpdateSkill(expt.EXPERT_ID)"
-														data-toggle="modal" data-target="#addSkill"><em
+													<td align="center"><a class="btn btn-default" href="http://localhost:2244/rest/admin/expert/update/?id={{expt.EXPERT_ID}}"><em
 															class="fa fa-pencil"></em></a> <a class="btn btn-danger"
 														ng-click="getDataDetail(expt.EXPERT_ID)"
 														data-toggle="modal" data-target="#viewExpert"><em
@@ -367,23 +365,24 @@
 										class="education-container col-md-12 col-xs-12"
 										style="margin-bottom: 0px">
 
-										<tr ng-repeat="cj in expertDetail.EXPERT_CURRENT_JOBS">
-											<td>
-												<div id="{{cj.id}}">
-													<form class="fm">
-														<fieldset class="fs">
-															<legend class="lg">{{cj.INSTITUTIOIN_NAME}}</legend>
-															<p style="font-size: 18px; font-family: 'Calibri'">
-																<i>Institution Phone</i>: {{cj.INSTITUTION_PHONE}} <br>
-																<i>Institution Email</i>: {{cj.INSTITUTION_EMAIL}} <br>
-																<br> <i>Position</i>: {{cj.POSITION_NAME}} <br>
-																<i>Salary</i>: {{cj.SALARY | currency }}
-															</p>
-														</fieldset>
-													</form>
-												</div>
-											</td>
-										</tr>
+										<div ng-repeat="cj in expertDetail.EXPERT_CURRENT_JOBS">
+
+											<div id="{{cj.id}}">
+												<form class="fm">
+													<fieldset class="fs">
+														<legend class="lg"></legend>
+														<p style="font-size: 18px; font-family: 'Calibri'">
+															<i>Institution Name: {{cj.INSTITUTIOIN_NAME}}</i> <i>Institution
+																Phone</i>: {{cj.INSTITUTION_PHONE}} <br> <i>Institution
+																Email</i>: {{cj.INSTITUTION_EMAIL}} <br> <br> <i>Position</i>:
+															{{cj.POSITION_NAME}} <br> <i>Salary</i>: {{cj.SALARY
+															| currency }}
+														</p>
+													</fieldset>
+												</form>
+											</div>
+
+										</div>
 									</table>
 								</div>
 								<div class="tab-pane fade" id="skill">
@@ -420,23 +419,23 @@
 													<div class="progress-bar progress-bar-info"
 														role="progressbar" style="width: 25%">{{eLang.MENTION}}</div>
 													<div class="progress-bar progress-bar-danger"
-														role="progressbar" style="width: {{eLang.LEVEL_NUMBER}}%"></div>
+														role="progressbar" style="width: {{eLang.LEVEL_NUMBER"></div>
 												</div></td>
 										</tr>
 									</table>
 								</div>
 								<div class="tab-pane fade" id="jobExpectation">
 									<table>
-										<tr ng-repeat="jp in expertDetail.EXPERT_JOB_EXPECTATIONS">
-											<td style="border-bottom: 1px solid #999; padding: 10px">
-												<p style="font-size: 18px; font-family: 'Calibri'">
-													Option {{$index+1}} <br> Position:
-													{{jp.POSITION_NAME}} <br> Salary Range:
-													{{jp.MIN_SALARY | currency}} - {{jp.MAX_SALARY | currency}}
-													<br> Location: {{jp.LOCATION}}
-												</p>
-											</td>
-										</tr>
+										<div ng-repeat="jp in expertDetail.EXPERT_JOB_EXPECTATIONS">
+											<p>
+												Option {{$index+1}} <br> Position: {{jp.POSITION_NAME}}
+												<br> Salary Range: {{jp.MIN_SALARY | currency}} -
+												{{jp.MAX_SALARY | currency}} <br> Location:
+												{{jp.LOCATION}}
+
+											</p>
+											<hr>
+										</div>
 									</table>
 								</div>
 								<div class="tab-pane fade" id="projectDemo">
@@ -444,7 +443,12 @@
 										height="600"></object>
 								</div>
 								<div class="tab-pane fade" id="document">
-									<a href="http://localhost:3333/{{}}"></a>
+									<div ng-repeat="doc in expertDetail.EXPERT_DOCUMENTS">
+										<p>File Name: {{doc.FILE_NAME}}</p>
+										<a href="http://localhost:3333/{{doc.FILE_PATH}}">Click to
+											View Or Download</a>
+										<hr>
+									</div>
 								</div>
 							</div>
 						</div>
