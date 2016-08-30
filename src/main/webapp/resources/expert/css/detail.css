@@ -1,0 +1,299 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 17, 2016, 12:38:11 PM
+    Author     : ViSAL MSi
+*/
+
+body{
+
+}
+
+/* .container{
+    background-color: #ecf0f1;
+    padding: 15px;
+} */
+
+.modal-content input{
+    margin-bottom: 5px;
+}
+
+#profile{
+    border: 2px solid #FFF;
+    box-shadow: -5px 5px 10px #999;
+}
+
+.profile-option{
+    /*background-color: #666666;*/
+    padding: 5px;
+}
+
+.profile-option h2{
+    color: #666;
+    padding-left: 20px;
+    display: inline-block;
+    /*text-shadow: 2px 2px #DFDEDE;*/
+}
+
+.text-left{
+    padding-left: 10px;
+}
+
+#profile{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tag{
+    background-color: #999999;
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.row1{
+    /*border: 1px solid #cccccc;*/
+    /*border-radius: 5px;*/
+    /* box-shadow: -5px 5px 5px #999; */
+    /* background-image: url("../img/pattern.jpg"); */
+ 	 background-color: #ecf0f1;
+    /*background: linear-gradient(#ccccff, #ffffff)  //Standard syntax (must be last)*/
+}
+
+#border-profile{
+    height: 100%;
+    margin: 2px;
+    padding: 25px;
+    /*border: 2px solid #cccccc;*/
+    border-radius: 5px;
+}
+
+#border-profile span{
+    font-family: 'Arial';
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lb{
+    display: inline-block;
+    width: 150px;
+}
+
+#border-profile label{
+    margin: 6px;
+}
+
+/*start personal information*/
+
+
+
+/*end personal information*/
+
+
+/*( a ) Education Section */
+.education-container {
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.skillLanguage-btn, .skillLanguage-btn-edit{
+    position: absolute;
+    border-radius: 10%;
+}
+
+.skillLanguage-btn-edit{
+    left: 40px;
+}
+
+.after-added{
+    margin-left: 50px;
+}
+
+.item {
+    padding: 5px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #f0f0f0;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.education-content {
+    /*border: 1px dashed #999;*/
+    display: inline-block;
+    padding: 20px;
+    padding-top: 0; 
+    margin-left: 0;
+    width: 100%;
+}
+
+.education-content .sub-edu{
+    border: 1px solid #FFF;
+    box-shadow: -5px 5px 5px #999999;
+    border-top: none;
+}
+
+.education-content h3 {
+    font-size: 18px;
+    background: #666666;
+    background: linear-gradient(to right,#666666, #666666, #999999);
+    text-align: center;
+    color: #FFF;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    font-family: 'Calibri';
+    outline: 1px solid #FFF;
+}
+
+
+/*.education-content h3:before {
+    border-radius: 5px;
+    border-color: transparent #666666 transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 10px;
+    /*box-shadow: -5px 5px 5px #999999;
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 5px;
+}*/
+
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+
+.education-content h3 span {
+    font-size: 16px;
+}
+
+.education-content h3 input{
+    border: none;
+    background-color: #666666;
+    color: #FFF;
+    height:25px;
+}
+
+.education-content textarea, .education-content textarea:focus{
+    border: 1px solid #999999;
+    border-radius: 0px;
+}
+
+.education-content textarea:focus{
+    box-shadow: none;
+}
+
+/* .education-content p {
+    padding: 15px 5px;
+} */
+
+.education-content <!--[*my CSS*] for general uses for only detail page-->
+<link rel="stylesheet" type="text/css"	href="${pageContext.request.contextPath }/resources/expert/css/detail.css" />
+<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/resources/experts/css/detail.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js"></script>{
+    text-align: right;
+    margin-top: 5px;
+}
+
+.education-content textarea{
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+.small-heading{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.small-heading p{
+    border-radius: 5px;
+    color: #FFF;
+    display: inline-block;
+    padding: 5px;
+    background-color: #2980b9;
+}
+
+.eTitle{
+    margin: 5px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-family: "Arial";
+    font-weight: 500;
+}
+
+.b-border{
+    /*margin: 1px;*/
+    /*border: 1px solid #999999;*/
+}
+
+/*Input*/
+
+input{
+    border: none;
+}
+
+input:focus{
+    box-shadow: none;
+}
+
+/*Input*/    
+
+/*Skill*/
+.progress{
+    box-shadow: -3px 3px 5px #999 !important;
+}
+
+/* btn-skin */
+.btn-skin, .progress-bar-info{
+    color: #fff !important;
+    background-color: #3dc9b3 !important;
+    border-color: #3dc9b3 !important;
+    border-radius: 0px;
+}
+
+.progress-bar-primary{
+	color: #fff !important;
+    background-color: #666 !important;
+}
+
+
+.btn-skin:hover{
+    color: #FFF !important;
+    background-color: #666;
+}
+
+/* form current job */
+
+.fm{
+	margin: 20px;
+}
+
+.fs{
+	padding: 10px;
+	box-shadow: -4px 4px 2px #999;
+	background-color: #FFF;
+}
+
+.lg{
+	box-shadow: -4px 3px 5px #999;
+	border: none;
+	text-align: center;
+	background-color: #009688 !important;
+	padding: 5px;
+	color: #FFF;
+}
+
+
+
+/* form current job */

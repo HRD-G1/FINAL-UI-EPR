@@ -1,0 +1,295 @@
+.navbar-default {
+    background-color: teal;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+   font-family: 'khmer os battambang', cursive;
+    font-size: 14;
+    
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background-color: #4DB6AC;
+}
+ 
+
+.navbar-default .navbar-toggle {
+    border-color: #21BA45;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+span.badge {
+    min-width: 3rem;
+    padding: 0 6px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: inherit;
+    color: #FBF3F3;
+    position: absolute;
+    right: 15px;
+    box-sizing: border-box;
+}
+
+.myfooter{
+	color: #FFF;
+    background-color: #008080;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 0px solid transparent;
+    border-left: 0px solid transparent;
+}
+
+.select-wrapper input.select-dropdown {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    outline: none;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    font-size: 13;
+    margin: 0 0 15px 0;
+    padding: 0;
+    display: block;
+}
+
+.pagination li.active {
+    background-color: #fff;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #2bbbad;
+    border-color: #337cbb;
+    cursor: default;
+}
+
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #21ba45;
+    will-change: left, right;
+}
+
+.tabs .tab a {
+    color: #1e1c1c;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-transition: color .28s ease;
+    -moz-transition: color .28s ease;
+    -o-transition: color .28s ease;
+    -ms-transition: color .28s ease;
+    transition: color .28s ease;
+}
+
+.tabs .tab a:hover {
+    color: black;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 16px;
+}
+
+body {
+    font-family: Lato;
+    font-size: 16;
+    line-height: 1.42857143;
+    color: #000000;
+}
+
+.navbar {
+    /*position: fixed;*/
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 0px solid transparent;
+}
+
+/* a img:hover {
+    border: solid !important;
+} */
+/*button color: #3CC66A*/
+
+.panel-primary > .panel-heading {
+    color: #ffffff;
+    background-color: teal;
+    border-color: #337cbb;
+}
+
+.navbar-brand {
+    padding:0px;
+}
+.introduction
+{
+	font-size: 18px;
+	font-family:  arial;
+	text-indent: 40px;
+	line-height: 30px;
+}
+/* hover url */
+.collapse .nav li:hover
+	{
+		background-color: #B2DFDB;
+		border-bottom: 1px solid red;
+	}
+ .nav li .fa:hover
+ {
+ 	/* color: #000; */
+ }
+
+
+.navbar 
+{
+	box-shadow: 0px 4px 5px black;	
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #008080;
+}
+.logo
+{
+	position: absolute;
+	left:7px;
+}
+.profile-description
+{
+	font-family: arial;
+	font-size: 15px;
+	background-color: #008080;
+	border-radius: 5px;
+	padding-left: 5px;
+}
+.expert-top
+{
+	color: white;
+}
+.expert-top:hover
+{ 
+	color: #ffffff;
+    background-color: #2bbbad;
+}
+
+
+/* facebook*/
+
+._4z_b {
+    background: #008080;
+    width: 176px;
+    height: 38px;
+}
+
+/* facebook */
+
+
+/* tab-pane skill */
+.tab-pane
+{
+	padding: 10px;
+} 
+div.skill-list
+{
+	padding: 5px;
+}
+.tab-content
+{
+	padding-left: 50px;
+}
+.subject_category
+{
+	font-size: 16px;
+}
+
+.profile-header-img
+{
+	padding: 10px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color:#009688;
+	font-family: 'khmer os battambang', cursive;
+	color : #fff;
+	}
+span.badge
+{
+	color:#fff;
+	background-color: #009688;
+}
+.ui-accordion .ui-accordion-header,.well-sm
+{
+	background-color: #008080;
+	color: #fff;
+}
+/* signup page  */
+ .signup-email,.signup-username,signup-usertype,signup-password,option
+ {
+  font-size:20px;
+  padding-top:5px;
+  padding-bottom: 5px;"
+ font-family: 'khmer os battambang', cursive;
+  font-size: 15px;
+ }
+
+.signup-label,.btn-signup,.note,.cotact-header,.location-header,.home-header,.login-header
+{
+  font-family: 'khmer os battambang', cursive;
+  font-size: 18px;
+  font-weight: 500;
+}
+.btn-signup
+{
+	background-color: #008080;
+	padding: 5px 10px 5px 10px;
+	color : #fff;
+}
+.btn-signup:hover
+{
+	background-color: #26A69A;
+}
+.contact-info,.contact-info a, .login-label
+{
+	 ffont-family: 'khmer os battambang', cursive;
+ 	 font-size: 15px;
+  	 font-weight: 500;
+}
+/* home page */
+
+.welcome,.contact-info
+{
+	word-wrap: break-word;
+	text-indent: 30px;
+	 font-size:16px;
+	 line-height:30px;
+	 word-spacing:5px; 
+	 font-family:  'khmer os battambang', cursive;
+}

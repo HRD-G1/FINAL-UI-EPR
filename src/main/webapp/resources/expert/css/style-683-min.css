@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2016, 1:10:15 AM
+    Author     : ViSAL MSi
+*/
+
+
+
+#sub-c-nav img, #sub-c-nav h2{
+    float: left;
+}
+
+#sub-c-nav img{
+    margin: 4px;
+}
+
+#sub-c-nav h2{
+    font-family: 'Arial';
+    color: #666;
+}
+
+#c-nav ul{
+    margin-top: 28px;
+    float: right;
+    
+}
+
+#c-nav ul li{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#c-nav ul li a:hover{
+    background-color: #666;
+    border-radius: 10px;
+    color: #FFF;
+}
