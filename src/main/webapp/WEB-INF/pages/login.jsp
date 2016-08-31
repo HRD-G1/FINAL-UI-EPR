@@ -33,57 +33,7 @@ pageEncoding="UTF-8"
     </style>
   	</head>
   <body>
-  <!-- facebook sdk -->
-<script>
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    if (response.status === 'connected') {
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      document.getElementById('status').innerHTML = 'Please log into this app.';
-    } else {
-      document.getElementById('status').innerHTML = 'Please log into Facebook.';
-    }
-  }
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1086449548091842',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use graph api version 2.5
-  });
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-  };
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', { locale: 'en_US', fields: 'name, email' }, function(response) {
-      console.log(response);
-      document.getElementById('status').innerHTML ='Thanks for logging in, ' + response.email + '!';
-    });
-  }
-</script>
 
-
-<div id="status">
-</div>
-
-  <!-- facebook -->
    
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">

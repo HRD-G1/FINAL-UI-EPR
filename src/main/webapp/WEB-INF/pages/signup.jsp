@@ -76,11 +76,12 @@
 							<a href="/logout" class="waves-effect waves-light" style=" font-family: 'khmer os battambang', cursive;color: #fff;  background-color: #008080;">	
 							<i class="fa fa-sign-out "></i>ចាកចេញ</a>
 							<security:authorize  access="hasRole('ADMIN')">
+								<a href="/rest/user/setting" style="font-family: 'khmer os battambang', cursive;color: #fff  ;background-color: #008080;;" class="waves-effect waves-light "> <i class="fa fa-user"></i> ទំព័ររបស់ខ្ញុំ</a></li>
 								<li class="menu" style="background-color: #008080;padding: 10px;"><a href="/rest/admin/dashboard" style="font-family: 'khmer os battambang', cursive;color: #fff;    background-color: #008080;"	class="waves-effect waves-light "> <i class="fa fa-user-secret"></i> គ្រប់គ្រង</a></li>
 							</security:authorize>
 							<security:authorize  access="hasRole('USER')">
 								<li class="menu" style="background-color: #008080;padding: 10px;">
-									<a href="/rest/user/setting" style="font-family: 'khmer os battambang', cursive;color: #fff  ;background-color: #008080;;" class="waves-effect waves-light "> <i class="fa fa-user"></i> គ្រប់គ្រង</a></li>
+									<a href="/rest/user/setting" style="font-family: 'khmer os battambang', cursive;color: #fff  ;background-color: #008080;;" class="waves-effect waves-light "> <i class="fa fa-user"></i> ទំព័ររបស់ខ្ញុំ</a></li>
 								<li class="menu" style="background-color: #008080;padding: 10px;">
 									<a href="/rest/user/promote" style="font-family: 'khmer os battambang', cursive;color: #fff;  background-color: #008080;"	class="waves-effect waves-light "> <i class="fa fa-hand-o-up"></i> ដំឡើងឋានៈ</a>
 								</li>
@@ -101,7 +102,7 @@
       <div class="row">
   		<div class="col-md-offset-1 col-md-10">
 			  <div class="panel panel-primary text-center">
-			    <div class="panel-heading" style="  font-family: 'Khmer OS Battambang';font-size: 17px;">បង្កើតគណនីថ្មី</div>
+			    <div class="panel-heading" style="  font-family: 'Khmer OS Battambang';font-size: 17px;"><i class="fa fa-user-plus"></i> បង្កើតគណនីថ្មី</div>
 			    <!-- start content body -->
 			    <div class="panel-body text-left">
 			    	<form name="mysignup">
@@ -110,6 +111,15 @@
 			    		<input name="myemail" class="form-control signup-email" id="email" type="email" ng-model="emails" placeholder="sample@gmail.com"  required ><br>
 			    	<label for="username" class="signup-label">ឈ្មោះ​ </label>
 			    		<input type="text" class="form-control signup-username" id="username" ng-model="usernamess" placeholder="Jonh Doe" min="8" required ><br>
+			    	<label class="signup-label">ភេទ​</label>
+				    	<input type="radio" name="gender" ng-model="gender" value="Male" checked><span style="font-size: 18px">Male</span>
+				    	<input type="radio" name="gender"  ng-model="gender" value="Female" ><span style="font-size: 18px">Female</span><br><br>
+				    <label for="dob" class="signup-label">ថ្ងៃខែឆ្នាំកំណើត</label>
+				    	<input type="text"  id="dob" class="form-control ssignup-username" ng-model="dob" required ><br>
+				    	
+				    <label for="phone" class="signup-label">លេខទូរស័ព្ទ</label>
+				    	<input type="text"  id="phone" class="form-control ssignup-username" ng-model="phone" required ><br>
+			    	
 			    	<label for="password" class="signup-label">លេខសំងាត់ </label>
 			    		<input  type="password"  id="password" class="form-control signup-password" ng-model="passwords" required ><br>
 			    	<label for="password" class="signup-label">លេខសំងាត់ ម្ដងទៀត  <span ng-show="confirmStatus==false">Not Match</span></label>
@@ -122,7 +132,7 @@
 			    		</select>
 			    		<br>
 			    	<div class="col-md-offset-4 col-sm-offset-4 col-xs-offset-4">	
-			    		<button ng-disabled=" !emails || !usernamess || !passwords || !cpwd || confirmStatus==false || mysignup.$invalid " class="btn btn-signup" 
+			    		<button ng-disabled=" !emails || !usernamess || !passwords || !cpwd || confirmStatus==false || !dob || !phone " class="btn btn-signup" 
 			    		ng-click="addUserAndRole()"><i class="fa fa-user-plus"></i> បង្កើតគណនី</button>
 			    		<button class="btn btn-signup" type="reset"> <i class="fa fa-eraser"></i> សម្អាត</button>
 			    	</div>

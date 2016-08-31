@@ -44,8 +44,20 @@
 					</div>
 				</div>
 				<div class="col-md-4 text-center myfooter ">
-					<br><div style="font-family: 'Khmer OS Battambang'; font-size: 18px; font-weight: 500">ភ្ជាប់</div>
+					<br>
+					<div style="font-family: 'Khmer OS Battambang'; font-size: 18px; font-weight: 500">ភ្ជាប់</div>
 					<hr>
+					<div class="row">
+						<div class="col-md-offset-2 col-md-8">
+							<a href="https://play.google.com/store?hl=en">
+								<img alt="" src="${pageContext.request.contextPath}/resources/experts/img/Android.png" width="150px">
+							</a>
+							 	<br><br>
+							 <a href="http://www.apple.com/itunes/download/">
+								<img alt="" src="${pageContext.request.contextPath}/resources/experts/img/appstore.png" width="150px">
+							</a>
+						</div>
+					</div>
 
 				</div>
 			</div>

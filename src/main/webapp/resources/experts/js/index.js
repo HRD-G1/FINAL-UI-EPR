@@ -523,6 +523,9 @@ app
 							$scope.email = response.data.email;
 							$scope.username = response.data.username;
 							$scope.password = response.data.password;
+							$scope.gender = response.data.gender;
+							$scope.dob = response.data.dob;
+							$scope.phone = response.data.phone;
 							console.log("This is user have logined");
 							console.log($scope.userlogined);
 						}, function(response) {
@@ -540,6 +543,9 @@ app
 							"email" : $scope.emails,
 							"password" : $scope.passwords,
 							"username" : $scope.usernamess,
+							"gender" : $scope.gender,
+							"dob" : $scope.dob,
+							"phone" : $scope.phone,
 							"roles" : [ {
 								id : $scope.selectedroleid,
 								roleName : ""
@@ -596,12 +602,14 @@ app
 								'email' : $scope.email,
 								'id' : $scope.id,
 								'username' : $scope.username,
-								'password' : $scope.npwd
+								'password' : $scope.npwd,
+								'gender' : $scope.gender,
+								'dob' : $scope.dob,
+								'phone' : $scope.phone
 							}
 						}).then(
 								function(response) {
-									$scope.email = "", $scope.username = "",
-											$scope.npwd = "", $scope.opwd = ""
+									window.location = "http://localhost:2244/rest/user/setting";
 								}, function(response) {
 								});
 					}
